@@ -359,4 +359,13 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
                 "gl_MaxDrawBuffers"),
     hooks: {"#": cppHook}
   });
+  CodeMirror.defineMIME("text/x-nesc", {
+    name: "clike",
+    keywords: words(cKeywords + "as atomic async call command component components configuration event generic " +
+                    "implementation includes interface module new norace nx_struct nx_union post provides " +
+                    "signal task uses abstract extends"),
+    blockKeywords: words("case do else for if switch while struct"),
+    atoms: words("null"),
+    hooks: {"#": cppHook}
+  });
 }());
